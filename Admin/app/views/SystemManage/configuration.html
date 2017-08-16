@@ -1,0 +1,45 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<script src="/js/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="/js/css/colorbox.css" />
+<div id="m_title">
+    <div id="crumb">参数配置</div>
+</div>
+<div class="list">
+    <table>        
+        <tr>
+            <th>ID</th>
+            <th>参数键</th>
+            <th>参数说明</th>
+            <th>参数值</th>
+            <th>历史修改记录数</th>
+            <th>创建时间</th>
+            <th>修改时间</th>
+            <th>操作</th>
+        </tr>
+        <{foreach $results.items as $key=> $row}>
+        <tr>
+            <td><{$row.id}></td>
+            <td><{$row.key|escape}></td>
+            <td>骑行单价</td>
+            <td><{$row.val|escape}>元 / 30分钟</td>
+            <td>4</td>
+            <td><{$row.created}></td>
+            <td><{$row.updated}></td>
+            <td>
+                <a href="/systemmanage/configuraMody/id/<{$row.id|escape}>"><img src="/image/xg.png" /></a>
+                
+            </td>
+        </tr>
+        <{/foreach}>
+    </table>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".inline").colorbox({inline: true, width: "450px"});
+        //$('#begin,#end').datetimepicker();//年月日时分秒
+        $('#begin,#end').datepicker();//年月日
+    });
+</script>
+
+<{/block}>

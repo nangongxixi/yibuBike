@@ -1,0 +1,85 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<script type="text/javascript">
+    function check_all(obj,cName)
+    {
+        var checkboxs = document.getElementsByName(cName);
+        for(var i=0;i<checkboxs.length;i++){checkboxs[i].checked = obj.checked;}
+    }
+    function uncheck_all(obj,cName)
+    {
+        var checkboxs = document.getElementsByName(cName);
+        for(var i=0;i<checkboxs.length;i++){checkboxs[i].checked = obj.checked=false;}
+    }
+</script>
+<div id="m_title">
+    <div id="crumb">管理员</div>
+</div>
+<div class="info_bar">
+    <div class="info_title"><{if $results.id}>编辑管理员<{else}>添加管理员<{/if}></div>
+    <div class="clr"></div>
+</div>
+<!--<form method="post" enctype="multipart/form-data" onsubmit="return formConfirm('save');">-->
+<form method="post" enctype="multipart/form-data">
+<div class="info">
+    <table>
+        <tr>
+            <th>ID：</th>
+            <td><{if $results.id}><{$results.id}><{else}>待定<{/if}></td>
+        </tr>
+        <tr>
+            <th class="must">帐号：</th>
+            <td>
+                <input type="text" name="question[account]" size="50" value="<{$results.account|escape}>" />
+                <{ww_error_tip errors=$errors name=account tag="span"}>
+            </td>
+        </tr>
+        <tr>
+            <th class="must">姓名：</th>
+            <td>
+                <input type="text" name="question[name]" size="50" value="<{$results.name|escape}>" />
+                <{ww_error_tip errors=$errors name=name tag="span"}>
+            </td>
+        </tr>
+        <tr>
+            <th>手机号：</th>
+            <td>
+                <input type="text" name="question[mobile]" size="50" value="<{$results.mobile|escape}>" />
+                <{ww_error_tip errors=$errors name=mobile tag="span"}>
+            </td>
+        </tr>
+        <tr>
+            <th>密码：</th>
+            <td>
+                <input type="text" name="question[newpassword]" size="50" value="<{$results.newpassword|escape}>" />
+                <{ww_error_tip errors=$errors name=newpassword tag="span"}>
+            </td>
+        </tr>
+        <tr>
+            <th >确认密码：</th>
+            <td>
+                <input type="text" name="question[surepassword]" size="50" value="<{$results.surepassword|escape}>" />
+                <{ww_error_tip errors=$errors name=surepassword tag="span"}>
+            </td>
+        </tr>
+        <tr>
+            <th>权限：</th>
+            <td>
+                <input type="checkbox" class="checkbox" onclick="check_all(this,'question[type][]')">&nbsp;全选&nbsp;&nbsp;
+                <{ww_html_checkbox name='question[type]' code=$codeConfig.managerauth.type value=$managerauth.type sep='&nbsp;&nbsp;'}>                
+                    √ 我的账户
+                
+            </td>
+        </tr>        
+        <tr class="option">
+            <th></th>
+            <td>
+               <input type="image" src="/image/btn_save.png" value="保存" name="complete" />
+               <a href="/demo/index"><img src="/image/btn_return.png" /></a>
+            </td>
+        </tr>
+    </table>
+</div>
+</form>
+<{/block}>
+

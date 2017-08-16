@@ -1,0 +1,8 @@
+[Fri Sep 23 2016 15:04:01 GMT+0800 (CST)] layer "slogan@2x.png,150%slogan@3x.png,144%slogan_xxh.pngslogan@2x.png,150%slogan@3x.png,144%slogan_xxh.png": Duplicate path: slogan@3x.png
+[Fri Sep 23 2016 15:09:54 GMT+0800 (CST)] layer "ic_avatar@2x.png,150%ic_avatar@3x.png,144%ic_avatar_xxh.pngic_avatar@2x.png,150%ic_avatar@3x.png,144%ic_avatar_xxh.png": Duplicate path: ic_avatar@3x.png
+[Fri Sep 23 2016 15:35:24 GMT+0800 (CST)] layer "ic_ arrow@2x.png,150%ic_ arrow@3x.png,144%ic_ arrow_xxh.pngic_ arrow@2x.png,150%ic_ arrow@3x.png,144%ic_ arrow_xxh.png": Duplicate path: ic_ arrow@3x.png
+[Fri Sep 23 2016 15:35:24 GMT+0800 (CST)] layer "ic_money@2x.png,150%ic_money@3x.png,144%ic_money_xxh.pngic_money@2x.png,150%ic_money@3x.png,144%ic_money_xxh.png": Duplicate path: ic_money@3x.png
+[Fri Sep 23 2016 15:35:24 GMT+0800 (CST)] layer "ic_ journey@2x.png,150%ic_ journey@3x.png,144%ic_ journey_xxh.pngic_ journey@2x.png,150%ic_ journey@3x.png,144%ic_ journey_xxh.png": Duplicate path: ic_ journey@3x.png
+[Fri Sep 23 2016 15:35:24 GMT+0800 (CST)] layer "ic_ news@2x.png,150%ic_ news@3x.png,144%ic_ news_xxh.pngic_ news@2x.png,150%ic_ news@3x.png,144%ic_ news_xxh.png": Duplicate path: ic_ news@3x.png
+[Fri Sep 23 2016 15:35:24 GMT+0800 (CST)] layer "ic_ point@2x.png,150%ic_ point@3x.png,144%ic_ point_xxh.pngic_ point@2x.png,150%ic_ point@3x.png,144%ic_ point_xxh.png": Duplicate path: ic_ point@3x.png
+[Fri Sep 23 2016 15:35:24 GMT+0800 (CST)] layer "ic_ set@2x.png,150%ic_ set@3x.png,144%ic_ set_xxh.pngic_ set@2x.png,150%ic_ set@3x.png,144%ic_ set_xxh.png": Duplicate path: ic_ set@3x.png

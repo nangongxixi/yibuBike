@@ -1,0 +1,88 @@
+<div>
+    <table id="api_tb" border="0" cellpadding="0" cellspacing="0">
+        <col width="145">
+        <col width="77">
+        <col width="180">
+        <col width="110">
+        <col width="50">
+        <col>
+        <tbody>
+            <tr>
+                <th>接口名称</th>
+                <td colspan="5">
+                    <div class="api_name">
+                        <span><?php echo $actionSummary ?></span>
+                        <?php if ($status == 0): ?>
+                            <div class="api_status api_ing">ing</div>
+                        <?php else: ?>
+                            <div class="api_status api_ok">ok</div>
+                        <?php endif ?>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>请求</th>
+                <td colspan="5">
+                    <span><?php echo $way ?></span>
+                    <a><?php echo $path ?></a>
+                </td>
+            </tr>
+            <tr>
+                <th id="parameter" rowspan="<?php echo $count ?>">参数(<a href="javascript:;" rel="close">显示HEADER</a>)</th>
+                <th></th>
+                <th>变量</th>
+                <th>类型</th>
+                <th>必需</th>
+                <th>备注</th>
+            </tr>
+            <?php foreach ($parameters as $key => $parameter): ?>
+                <?php if (!empty($parameter) && is_array($parameter)): ?>
+                    <?php foreach ($parameter as $k => $v): ?>
+                        <tr class="<?php if ($key == "header"): ?>p_header_li hide <?php endif ?><?php if (isset($v["especial"])): ?>especial_li<?php endif ?>">
+                            <?php if ($k == 0): ?>
+                                <td rowspan="<?php echo count($parameters[$key]) ?>">
+                                    <?php if ($key == "header"): ?>
+                                        HEADER
+                                    <?php else: ?>
+                                        BODY
+                                    <?php endif ?>
+                                </td>
+                            <?php endif ?>
+                            <td>
+                                <span><?php echo isset($v['name']) ? $v['name'] : "" ?></span>
+                            </td>
+                            <td><?php echo isset($v['type']) ? $v['type'] : "varchar" ?></td>
+                            <td><?php echo isset($v['required']) ? $v['required'] : 'R' ?></td>
+                            <td><?php echo isset($v['remark']) ? $v['remark'] : "" ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                <?php endif ?>
+            <?php endforeach ?>
+            <?php if (empty($parameters['body'])): ?>
+                <tr>
+                    <td>BODY</td>
+                    <td colspan="4" class="text_align_center">无</td>
+                </tr>
+            <?php endif ?>
+            <?php if (isset($parameters['notice'])): ?>
+                <tr>
+                    <?php echo str_replace('\n', '<br>&emsp;&emsp;', $parameters['notice']); ?>
+                </tr>
+            <?php endif ?>
+            <tr>
+                <th<?php if ($return['illustrate']): ?> rowspan="2"<?php endif ?>>返回</th>
+                <td colspan="5">
+                    <?php echo $return['str']; ?>
+                </td>
+            </tr>
+            <?php if ($return['illustrate']): ?>
+                <tr>
+                    <td colspan="5"><span class="font_color_blue">说明:<br>&emsp;&emsp;</span><?php echo str_replace('\n', '<br>&emsp;&emsp;', $return['illustrate']); ?></td>
+                </tr>
+            <?php endif ?>
+            <tr>
+                <td colspan="5" class="not_border">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,138 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<script src="/js/jquery.colorbox.js"></script>
+<script src="/js/layer.js"></script>
+<link rel="stylesheet" href="/js/css/colorbox.css" />
+<link href="/css/layer.css" rel="stylesheet" type="text/css"/>
+<div id="m_title">
+    <div id="crumb">用户一览</div>
+</div>
+<form method="get" name="search_form">
+    <div class="search">
+        <div class="title">快速检索</div>
+        <table style="width: auto;">
+            <tr> 
+                <th>手机号：</th>
+                <td><input type="text" class="text form_value" name="sh[mobile]" size="30" value="<{$sh.mobile|escape}>" /></td>
+                <th>姓名：</th>
+                <td><input type="text" class="text form_value" name="sh[name]" size="20" value="<{$sh.name|escape}>" /></td>
+                <th>余额：</th>
+                <td>
+                    <input name="sh[begin]" id="begin" size="18" value="<{$sh.begin}>"> -
+                    <input name="sh[end]"  id="end" size="18" value="<{$sh.end}>">
+                </td>
+            </tr>
+                
+            <tr>
+                <th>注册时间：</th>
+                <td colspan="2">
+                    <input name="sh[begin]" id="begin" size="20" value="<{$sh.begin}>"> -
+                    <input name="sh[end]" id="end" size="20" value="<{$sh.end}>">
+                </td>
+                <td class="option" colspan="2">
+                    <input type="image" src="/image/btn_search.png" />
+                    <img src="/image/btn_reset.png" onclick="searchReset()" />
+                </td>         
+            </tr>
+        </table>
+    </div>
+    <div class="list_bar">
+        <{include file="../Common/paging.html"}>
+        <div class="clr"></div>
+    </div>
+</form>
+
+<div class="list">
+    <table>
+        
+        <tr>
+            <th>ID</th>
+            <th width="140">手机号</th>
+            <th>姓名</th>
+            <th width="45" align="center">头像</th>
+            <th>是否缴<br />纳押金</th>
+            <th>实名认证</th>
+            <th>余额</th>
+            <!--<th>邀请码</th>-->
+            <th>累积骑行<br />(公里)</th>
+            <th>预约记录数</th>
+            <th>行程记录数</th>
+            <th>信用总分</th>
+            <th>状态</th>
+            <th>注册时间</th>
+            <th>操作</th>
+        </tr>
+        <{foreach $results.items as $row}>
+        <tr>
+            <td><{$row.id}></td>
+            <td><{$row.mobile}></td>
+            <td>
+                <{if $row.name}>
+                    <{$row.name}>
+                <{else}>
+                    <a href="smrz?sh[id]=<{$row.id}>">认证中</a>
+                <{/if}>
+            </td> 
+            <td width="45" align="center">
+                <{if $row.avatar}>
+                <a class="show_img" href="/image/<{$row.avatar}>"><img src="/image/<{$row.avatar}>" width="40" height="30"></a>
+                <{else}>
+                <a class="show_img" href="/image/headpic.jpg"><img src="/image/headpic.jpg" width="40" height="30"></a>
+                <{/if}>
+            </td>
+            
+            <td>
+                <a href="yjInfoy?id=<{$row.id}>" class="rayu_html_iframe">
+                    <{$codeConfig.yajstatus.type[$row.deposit_status].name}>
+                </a>
+                
+            </td>
+            
+            <td>             
+                <a class="rayu_html_fetch" href="yrzInfon?id=<{$row.id}>" ondragstart="return false">
+                    <{$codeConfig.realnamestatus.type[$row.realname_auth_status].name}>
+                </a>
+            </td>            
+            
+            <td><{$row.money}></td>
+            <!--<td><a href="yqxx?sh[yqm]=<{$row.qid}>"><{$row.qid}></td>-->
+            <td><a class="rayu_html_fetch" href="qxInfo?id=<{$row.qid}>" ondragstart="return false"><{$row.trip_dist}></a></td>
+            <td><a class="rayu_html_fetch" href="yyInfo?id=<{$row.qid}>" ondragstart="return false"><{$row.qid}></a></td>
+            <td><a class="rayu_html_fetch" href="xcInfo?id=<{$row.qid}>" ondragstart="return false"><{$row.qid}></a></td>
+            <td><a href="xyjl?sh[xyzf]=<{$row.qid}>"><{$row.credit_score}></td>
+            <td><a class="rayu_html_fetch" href="ydjInfo?id=<{$row.qid}>" ondragstart="return false">
+                <{$codeConfig.freeze.type[$row.status].name}>
+                </a>
+            </td>
+            <td><{$row.created}></td>
+            <td>
+                <{if $row.status == 2}>
+                    <a href="">取消冻结</a>
+                <{else}>
+                    <a href="">冻结账号</a><br />
+                    <a href="">重置密码</a>
+                <{/if}>
+                
+                
+                
+            </td>
+            <div style='display:none'>
+                <div id="remark_<{$row.qid}>"><{$row.remark|nl2br}></div>
+            </div>
+        </tr>
+        <{/foreach}>
+    </table>
+</div>
+<script type="text/javascript"> 
+    
+    $(document).ready(function () {
+        $(".inline").colorbox({inline: true, width: "450px"});
+    });
+    
+    $('.show_img').colorbox({maxHeight: '90%', maxWidth: '90%'});
+   
+   
+    
+</script>
+
+<{/block}>

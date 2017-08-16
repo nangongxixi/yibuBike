@@ -1,0 +1,31 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<div id="m_title">
+    <div id="crumb">参数配置</div>
+</div>
+<div class="info_bar">
+    <div class="info_title">修改参数</div>
+    <div class="clr"></div>
+</div>
+<!--<form method="post" enctype="multipart/form-data" onsubmit="return formConfirm('save');">-->
+<form method="post" enctype="multipart/form-data">
+<div class="info">
+    <table>        
+        <tr>
+            <th class="must">骑行单价：</th>
+            <td>
+                <input type="text" name="question[val]" size="30" value="<{$results.val|escape}>" />
+                <{ww_error_tip errors=$errors name=val tag="span"}>
+            </td>
+        </tr>          
+        <tr class="option">
+            <th></th>
+            <td>
+               <input type="image" src="/image/btn_save.png" value="保存" name="complete" />               
+            </td>
+        </tr>
+    </table>
+</div>
+</form>
+<{/block}>
+

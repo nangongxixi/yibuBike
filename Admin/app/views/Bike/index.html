@@ -1,0 +1,74 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<script src="/js/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="/js/css/colorbox.css" />
+<div id="m_title">
+    <div id="crumb">单车一览</div>
+</div>
+
+<form method="get" name="search_form">
+    <div class="search">
+        <div class="title">快速检索</div>
+        <table style="width: auto;">
+            <tr> 
+                <th>单车编号：</th>
+                <td><input type="text" class="text form_value" name="sh[code]" size="30" value="<{$sh.code|escape}>" /></td>
+                <th>状态：</th>
+                <td><input type="text" class="text form_value" name="sh[status]" size="30" value="<{$sh.status|escape}>" /></td>
+                <td class="option">
+                    <input type="image" src="/image/btn_search.png" />
+                    <img src="/image/btn_reset.png" onclick="searchReset()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="list_bar">
+        <{include file="../Common/paging.html"}>
+        <div class="clr"></div>
+    </div>
+</form>
+
+<div class="list">
+    <table>
+        <col width="50" />
+        <col />
+        <col width="150" />
+        <col width="200" />
+        <col width="150" />
+        <col width="150" />
+        <tr>
+            <th>ID</th>
+            <th>单车编号</th>
+            <th>参考定位</th>
+            <th  width="8%">状态</th>
+            <th>故障记录数</th>
+            <th>创建时间</th>
+            <th width="26%">操作</th>
+        </tr>
+        <{foreach $results.items as $key=> $row}>
+        <tr>
+            <td><{$row.id}></td>
+            <td><{$row.code|escape}></td>
+            <td>四川成都</td>
+            <td>已预约</td>
+            <td>暂无</td>            
+            <td><{$row.created}></td>
+            <td>                
+                <a href="javascript:delConfirm(<{$row.qid|escape}>, 'Bike')"><img src="/image/btn_delete.png" /></a>&nbsp;
+                <a href=""><img src="/image/dw.png" /></a>&nbsp;
+                <a href=""><img src="/image/gzbj.png" /></a>&nbsp;
+                <a href=""><img src="/image/bf.png" /></a>
+            </td>        
+        </tr>
+        <{/foreach}>
+    </table>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".inline").colorbox({inline: true, width: "450px"});
+        //$('#begin,#end').datetimepicker();//年月日时分秒
+        $('#begin,#end').datepicker();//年月日
+    });
+</script>
+
+<{/block}>

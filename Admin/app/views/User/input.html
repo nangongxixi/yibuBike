@@ -1,0 +1,92 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<div id="m_title">
+    <div id="crumb">问答管理</div>
+</div>
+<div class="info_bar">
+    <div class="info_title"><{if $question.qid}>编辑问答<{else}>添加问答<{/if}></div>
+    <div class="clr"></div>
+</div>
+<form method="post" enctype="multipart/form-data" onsubmit="return formConfirm('save');">
+<div class="info">
+    <table>
+        <tr>
+            <th>ID：</th>
+            <td><{if $question.qid}><{$question.qid}><{else}>待定<{/if}></td>
+        </tr>
+        <tr>
+            <th class="must">问题类型：</th>
+            <td>
+                <{ww_html_radio name='question[type]' code=$codeConfig.question.type value=$question.type default=1 sep='&nbsp;&nbsp;'}>
+            </td>
+        </tr>
+        <tr>
+            <th class="must">问题：</th>
+            <td>
+                <input type="text" name="question[question]" size="80" value="<{$question.question|escape}>" />
+                <{ww_error_tip errors=$errors name=question}>
+            </td>
+        </tr>
+        <tr>
+            <th class="must">答案：</th>
+            <td>
+                <div class="answer">
+                    <span style="padding-right: 5px;">A：</span>
+                    <input type="text" name="question[answer][a][text]" size="50" value="<{$question.answer.a.text|escape}>" />
+                    <input type="checkbox" name="question[answer][a][is_right]" value="1" <{if $question.answer.a.is_right}>checked="true"<{/if}> />是否正确答案
+                </div>
+                <div class="answer">
+                    <span style="padding-right: 5px;">B：</span>
+                    <input type="text" name="question[answer][b][text]" size="50" value="<{$question.answer.b.text|escape}>" />
+                    <input type="checkbox" name="question[answer][b][is_right]" value="1" <{if $question.answer.b.is_right}>checked="true"<{/if}> />是否正确答案
+                </div>
+                <div class="answer">
+                    <span style="padding-right: 5px;">C：</span>
+                    <input type="text" name="question[answer][c][text]" size="50" value="<{$question.answer.c.text|escape}>" />
+                    <input type="checkbox" name="question[answer][c][is_right]" value="1" <{if $question.answer.c.is_right}>checked="true"<{/if}> />是否正确答案
+                </div>
+                <div class="answer">
+                    <span style="padding-right: 5px;">D：</span>
+                    <input type="text" name="question[answer][d][text]" size="50" value="<{$question.answer.d.text|escape}>" />
+                    <input type="checkbox" name="question[answer][d][is_right]" value="1" <{if $question.answer.d.is_right}>checked="true"<{/if}> />是否正确答案
+                </div>
+                <div class="answer">
+                    <span style="padding-right: 5px;">E：</span>
+                    <input type="text" name="question[answer][e][text]" size="50" value="<{$question.answer.e.text|escape}>" />
+                    <input type="checkbox" name="question[answer][e][is_right]" value="1" <{if $question.answer.e.is_right}>checked="true"<{/if}> />是否正确答案
+                </div>
+                <div class="answer">
+                    <span style="padding-right: 5px;">F：</span>
+                    <input type="text" name="question[answer][f][text]" size="50" value="<{$question.answer.f.text|escape}>" />
+                    <input type="checkbox" name="question[answer][f][is_right]" value="1" <{if $question.answer.f.is_right}>checked="true"<{/if}> />是否正确答案
+                </div>
+                <div class="answer">
+                    <span style="padding-right: 5px;">G：</span>
+                    <input type="text" name="question[answer][g][text]" size="50" value="<{$question.answer.g.text|escape}>" />
+                    <input type="checkbox" name="question[answer][g][is_right]" value="1" <{if $question.answer.g.is_right}>checked="true"<{/if}> />是否正确答案
+                </div>
+                <div class="answer">
+                    <span style="padding-right: 5px;">H：</span>
+                    <input type="text" name="question[answer][h][text]" size="50" value="<{$question.answer.h.text|escape}>" />
+                    <input type="checkbox" name="question[answer][h][is_right]" value="1" <{if $question.answer.h.is_right}>checked="true"<{/if}> />是否正确答案
+                </div>
+                <{ww_error_tip errors=$errors name=answer}>
+            </td>
+        </tr>
+        <tr>
+            <th>答案分析：</th>
+            <td>
+                <textarea name="question[remark]" class="textarea"><{$question.remark|escape}></textarea>
+            </td>
+        </tr>
+        <tr class="option">
+            <th></th>
+            <td>
+               <input type="image" src="/image/btn_save.png" value="保存" name="complete" />
+               <a href="/demo/index"><img src="/image/btn_return.png" /></a>
+            </td>
+        </tr>
+    </table>
+</div>
+</form>
+<{/block}>

@@ -1,0 +1,29 @@
+
+<table width="500" height="200" cellpadding="3" cellspacing="3">
+    <tr>
+        <th style="border-bottom: 1px dotted #ccc; font-size:16px; line-height: 200%">
+            <{if $result.name}>
+                <{$result.name}>
+            <{else}>
+                <{$result.tel}>
+            <{/if}>的骑行信息
+        </th></tr>
+    <tr><td valign="top">
+            <table width="100%" style="margin-top:8px;border:1px solid #d0d0d0" cellpadding="0" cellspacing="0">                
+                <tr>
+                    <td style="font-size:16px; background-color: #eeeeee; line-height: 250%;text-align:center">累计骑行
+(公里)</td>
+                    <td style="font-size:16px; background-color: #eeeeee; text-align:center; border-left:1px solid #d0d0d0;border-right:1px solid #d0d0d0">节约碳排量(千克)</td>
+                    <td style="font-size:16px; background-color: #eeeeee; text-align:center">运动成就(大卡)</td>
+                </tr>
+                
+                <tr>
+                    <td style="font-size:14px;line-height: 250%;text-align:center"><{$result.ljqxxx}></td>
+                    <td style="font-size:14px;text-align:center;border-left:1px solid #d0d0d0;border-right:1px solid #d0d0d0"><{$result.jytpl}></td>
+                    <td style="font-size:14px;text-align:center"><{$result.ydcj}></td>
+                </tr>
+               
+            </table>
+
+        </td></tr> 
+</table>

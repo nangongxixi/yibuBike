@@ -1,0 +1,25 @@
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.pngic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.png": Duplicate path: ic_ phone@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.pngic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.png": Duplicate path: ic_ captcha@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "slogan@2x.png,150%slogan@3x.png,144%slogan_xxh.pngslogan@2x.png,150%slogan@3x.png,144%slogan_xxh.png": Duplicate path: slogan@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "btn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.pngbtn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.png": Duplicate path: btn_back@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.pngic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.png": Duplicate path: ic_ phone@2x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.pngic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.png": Duplicate path: ic_ phone@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.pngic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.png": Duplicate path: ic_ phone_xxh.pngic_ phone@2x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.pngic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.png": Duplicate path: ic_ phone@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.pngic_ phone@2x.png,150%ic_ phone@3x.png,144%ic_ phone_xxh.png": Duplicate path: ic_ phone_xxh.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.pngic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.png": Duplicate path: ic_ captcha@2x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.pngic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.png": Duplicate path: ic_ captcha@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.pngic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.png": Duplicate path: ic_ captcha_xxh.pngic_ captcha@2x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.pngic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.png": Duplicate path: ic_ captcha@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.pngic_ captcha@2x.png,150%ic_ captcha@3x.png,144%ic_ captcha_xxh.png": Duplicate path: ic_ captcha_xxh.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "ic_ logo_temporary@2x.png,150%ic_ logo_temporary@3x.png,144%ic_ logo_temporary_xxh.pngic_ logo_temporary@2x.png,150%ic_ logo_temporary@3x.png,144%ic_ logo_temporary_xxh.png": Duplicate path: ic_ logo_temporary@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "slogan@2x.png,150%slogan@3x.png,144%slogan_xxh.pngslogan@2x.png,150%slogan@3x.png,144%slogan_xxh.png": Duplicate path: slogan@2x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "slogan@2x.png,150%slogan@3x.png,144%slogan_xxh.pngslogan@2x.png,150%slogan@3x.png,144%slogan_xxh.png": Duplicate path: slogan@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "slogan@2x.png,150%slogan@3x.png,144%slogan_xxh.pngslogan@2x.png,150%slogan@3x.png,144%slogan_xxh.png": Duplicate path: slogan_xxh.pngslogan@2x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "slogan@2x.png,150%slogan@3x.png,144%slogan_xxh.pngslogan@2x.png,150%slogan@3x.png,144%slogan_xxh.png": Duplicate path: slogan@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "slogan@2x.png,150%slogan@3x.png,144%slogan_xxh.pngslogan@2x.png,150%slogan@3x.png,144%slogan_xxh.png": Duplicate path: slogan_xxh.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "btn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.pngbtn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.png": Duplicate path: btn_back@2x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "btn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.pngbtn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.png": Duplicate path: btn_back@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "btn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.pngbtn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.png": Duplicate path: btn_back_xxh.pngbtn_back@2x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "btn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.pngbtn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.png": Duplicate path: btn_back@3x.png
+[Fri Sep 23 2016 15:39:06 GMT+0800 (CST)] layer "btn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.pngbtn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.png": Duplicate path: btn_back_xxh.png

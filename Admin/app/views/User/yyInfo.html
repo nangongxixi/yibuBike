@@ -1,0 +1,62 @@
+<link href="../css/laypage.css" rel="stylesheet" type="text/css"/>    
+<table width="1000"  cellpadding="8" cellspacing="8">
+    <tr>
+        <th style="border-bottom: 1px dotted #ccc; font-size:16px">
+            <{if $user.name}>
+                <{$user.name}>
+            <{else}>
+                <{$user.tel}>
+            <{/if}>的预约记录信息
+        </th></tr>
+</table>
+
+<table width="1000" style="margin-top:8px;border:1px solid #d0d0d0" cellpadding="0" cellspacing="0">              
+                <tr>
+                    <td width="8%" style="font-size:16px; background-color: #eeeeee; line-height: 250%;text-align:center">ID</td>
+                    <td width="20%"  style="font-size:16px; background-color: #eeeeee; text-align:center; border-left:1px solid #d0d0d0;border-right:1px solid #d0d0d0">单车编号</td>
+                    <td width="30%"  style="font-size:16px;text-align:center; background-color: #eeeeee; border-right:1px solid #d0d0d0">预约单车位置</td>
+                   <td width="10%"  style="font-size:16px;text-align:center; background-color: #eeeeee; border-right:1px solid #d0d0d0">单价</td>
+                   <td width="10%"  style="font-size:16px;text-align:center; background-color: #eeeeee; border-right:1px solid #d0d0d0">状态</td>                   
+                   <td width="22%"  style="font-size:16px; background-color: #eeeeee; text-align:center">开始时间</td>
+                </tr></table>
+       
+ <ul id="biuuu_city_list">
+    <{foreach $result as $row}>
+        <li>
+        <table width="1000" style="margin-top:8px;border:1px solid #d0d0d0" cellpadding="0" cellspacing="0">            
+            <tr>
+                <td width="8%" style="font-size:14px;line-height: 250%;text-align:center"><{$row.id}></td>
+                <td width="20%" style="font-size:14px;text-align:center;border-left:1px solid #d0d0d0;border-right:1px solid #d0d0d0"><{$row.dcbh}></td>                
+                <td width="30%" style="font-size:14px;text-align:center;border-right:1px solid #d0d0d0"><{$row.yydcwz}></td>
+                <td width="10%" style="font-size:14px;text-align:center;border-right:1px solid #d0d0d0"><{$row.dj}></td>
+                <td width="10%" style="font-size:14px;text-align:center;border-right:1px solid #d0d0d0"><{$row.zt}></td>
+                <td width="22%" style="font-size:14px;text-align:center"><{$row.time}></td>
+            </tr>
+        </table>
+        </li>
+    <{/foreach}>
+    </ul>
+<div id="biuuu_city" align="center" style="margin-top:10px"></div>
+<script src="../js/laypage.js"></script>
+<script>
+    var data = $("#biuuu_city_list > li");    
+    var nums = 2; //页面大小
+    var pages = Math.ceil(data.length / nums); //得到总页数
+    var thisDate = function(curr) {        
+        var str = '', last = curr * nums - 1;
+        last = last >= data.length ? (data.length - 1) : last;
+        for (var i = (curr * nums - nums); i <= last; i++) {
+            str += '<li>' + $(data[i]).html() + '</li>';
+        }
+        return str;
+    };    
+    //调用分页
+    laypage({
+        cont: 'biuuu_city',
+        pages: pages,
+        groups: 3,
+        jump: function(obj) {
+            document.getElementById('biuuu_city_list').innerHTML = thisDate(obj.curr);
+        }
+    })
+</script>

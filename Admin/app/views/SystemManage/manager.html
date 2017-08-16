@@ -1,0 +1,57 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<script src="/js/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="/js/css/colorbox.css" />
+<div id="m_title">
+    <div id="crumb">管理员</div>
+</div>
+
+<form method="get" name="search_form">    
+    <div class="list_bar">
+        <div class="list_title">管理员列表 | <a href="/systemmanage/input" style="color:red">添加管理员</a></div>    
+        <div class="clr"></div>
+    </div>
+</form>
+
+<div class="list">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>账号</th>
+            <th>姓名</th>
+            <th>手机号</th>
+            <th>权限</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        <{foreach $results.items as $key=> $row}>
+        <tr>
+            <td><{$row.id}></td>
+            <td><{$row.account|escape}></td>
+            <td><{$row.name|escape}></td>
+            <td><{$row.mobile}></td>
+            <td><{$row.auth|escape}>
+            </td>
+            <td><{$row.created}></td>
+            <td>
+                <a href="/systemmanage/input/id/<{$row.id|escape}>"><img src="/image/btn_edit.png" /></a>
+                <a href="javascript:delConfirm(<{$row.id|escape}>, 'tb_system_admin')"><img src="/image/btn_delete.png" /></a>
+                
+            </td>
+        <div style='display:none'>
+            <div id="remark_<{$row.qid}>"><{$row.remark|nl2br}>
+            </div>
+        </div>
+        </tr>
+        <{/foreach}>
+    </table>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".inline").colorbox({inline: true, width: "450px"});
+        //$('#begin,#end').datetimepicker();//年月日时分秒
+        $('#begin,#end').datepicker();//年月日
+    });
+</script>
+
+<{/block}>

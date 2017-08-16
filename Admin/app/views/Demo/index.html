@@ -1,0 +1,91 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<script src="/js/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="/js/css/colorbox.css" />
+<div id="m_title">
+    <div id="crumb">问答管理</div>
+</div>
+
+<form method="get" name="search_form">
+    <div class="search">
+        <div class="title">快速检索</div>
+        <table style="width: auto;">
+            <tr> 
+                <th>问题：</th>
+                <td><input type="text" class="text form_value" name="sh[question]" size="30" value="<{$sh.question|escape}>" /></td>
+                <th>问题类型：</th>
+                <td>
+                    <select name="sh[type]">
+                        <{ww_html_select code=$codeConfig.question.type value=$sh.type empty='true'}>
+                    </select>
+                </td>
+                <th>创建时间：</th>
+                <td colspan="4">
+                    <input name="sh[begin]" id="begin" value="<{$sh.begin}>"> -
+                    <input name="sh[end]" id="end" value="<{$sh.end}>">
+                </td>
+                <td class="option">
+                    <input type="image" src="/image/btn_search.png" />
+                    <img src="/image/btn_reset.png" onclick="searchReset()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="list_bar">
+        <{include file="../Common/paging.html"}>
+        <div class="clr"></div>
+    </div>
+</form>
+
+<div class="list">
+    <table>
+        <col width="50" />
+        <col />
+        <col width="150" />
+        <col width="200" />
+        <col width="150" />
+        <col width="150" />
+        <tr>
+            <th>ID</th>
+            <th>问题</th>
+            <th>问题类型</th>
+            <th>答案分析</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        <{foreach $results.items as $key=> $row}>
+        <tr>
+            <td><{$row.qid}></td>
+            <td><{$row.question|escape}></td>
+            <td><{ww_html_code code=$codeConfig.question.type value=$row.type}></td> 
+            <td>
+                <{if $key == 0}>
+                <a href="/demo/ajax_list" class="rayu_html_iframe">查看列表</a>
+                <{else if $key==1}>
+                 <a href="/demo/ajax_form" class="rayu_html_iframe">查看表单</a>
+                <{else}>
+                --
+                <{/if}>
+            </td>
+            <td><{$row.created}></td>
+            <td>
+                <a href="/demo/input/qid/<{$row.qid|escape}>"><img src="/image/btn_edit.png" /></a>
+                <a href="javascript:delConfirm(<{$row.qid|escape}>, 'question')"><img src="/image/btn_delete.png" /></a>
+            </td>
+        <div style='display:none'>
+            <div id="remark_<{$row.qid}>"><{$row.remark|nl2br}>
+            </div>
+        </div>
+        </tr>
+        <{/foreach}>
+    </table>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".inline").colorbox({inline: true, width: "450px"});
+        //$('#begin,#end').datetimepicker();//年月日时分秒
+        $('#begin,#end').datepicker();//年月日
+    });
+</script>
+
+<{/block}>

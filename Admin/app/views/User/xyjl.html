@@ -1,0 +1,82 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<script src="/js/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="/js/css/colorbox.css" />
+<div id="m_title">
+    <div id="crumb">信用记录</div>
+</div>
+
+<form method="get" name="search_form">
+    <div class="search">
+        <div class="title">快速检索</div>
+        <table style="width: auto;">
+            <tr> 
+                <th>手机号：</th>
+                <td><input type="text" class="text form_value" name="sh[question]" size="30" value="<{$sh.question|escape}>" /></td>
+                <th>姓名：</th>
+                <td><input type="text" class="text form_value" name="sh[question]" size="30" value="<{$sh.question|escape}>" /></td>
+                </tr><tr>
+                <th>其他：</th>
+                <td>
+                    <select name="sh[type]" style="width:198px">
+                        <{ww_html_select code=$codeConfig.xyjlxz.type value=$sh.type empty='true'}>
+                    </select>
+                </td>                
+                <td class="option" colspan="5" style="text-align:center">
+                    <input type="image" src="/image/btn_search.png" />
+                    <img src="/image/btn_reset.png" onclick="searchReset()" />
+                </td>
+                
+            </tr>
+        </table>
+    </div>
+    <div class="list_bar">
+        <{include file="../Common/paging.html"}>
+        <div class="clr"></div>
+    </div>
+</form>
+
+<div class="list">
+    <table>
+        
+        <tr>
+            <th>ID</th>
+            <th width="140">手机号</th>
+            <th>姓名</th>
+            <th width="45" align="center">头像</th>            
+            <th>类型</th>
+            <th>信用分</th>
+            <th>时间</th>          
+        </tr>
+        <{foreach $results.items as $row}>
+        <tr>
+            <td><{$row.qid}></td>
+            <td>13888888888</td>
+            <td>欧阳瓜瓜</td> 
+            <td width="45" align="center">
+                <{if $row.remark}>
+                <img src="./image/<{$row.remark}>" width="40" height="30">
+                <{else}>
+                    <img src="/image/headpic.jpg" width="40" height="30">
+                <{/if}>
+            </td>
+            
+            <td>随意停放</td>
+            <td>32</td>           
+            <td><{$row.created}></td>           
+            <div style='display:none'>
+                <div id="remark_<{$row.qid}>"><{$row.remark|nl2br}>
+                </div>
+            </div>
+        </tr>
+        <{/foreach}>
+    </table>
+</div>
+<script type="text/javascript">
+    $('.show_img').colorbox({maxHeight: '90%', maxWidth: '90%'});    
+    $(document).ready(function () {
+        $(".inline").colorbox({inline: true, width: "450px"});
+    });
+</script>
+
+<{/block}>

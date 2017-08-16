@@ -1,0 +1,11 @@
+[Fri Sep 23 2016 14:42:54 GMT+0800 (CST)] layer "+100": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Sep 23 2016 14:42:54 GMT+0800 (CST)] layer "+100": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Sep 23 2016 14:42:54 GMT+0800 (CST)] layer "+50": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Sep 23 2016 14:42:54 GMT+0800 (CST)] layer "slogan@2x.png,150%slogan@3x.png,144%slogan_xxh.pngslogan@2x.png,150%slogan@3x.png,144%slogan_xxh.png": Duplicate path: slogan@3x.png
+[Fri Sep 23 2016 14:42:54 GMT+0800 (CST)] layer "+100": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Sep 23 2016 14:50:06 GMT+0800 (CST)] layer "points@2x.png,150%points@3x.png,144%points_xxh.pngpoints@2x.png,150%points@3x.png,144%points_xxh.png": Duplicate path: points@3x.png
+[Fri Sep 23 2016 14:50:24 GMT+0800 (CST)] layer "+100": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Sep 23 2016 14:50:24 GMT+0800 (CST)] layer "bonuspoint@2x.png,150%bonuspoint@3x.png,144%bonuspoint_xxh.pngbonuspoint@2x.png,150%bonuspoint@3x.png,144%bonuspoint_xxh.png": Duplicate path: bonuspoint@3x.png
+[Fri Sep 23 2016 14:52:35 GMT+0800 (CST)] layer "+50": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Sep 23 2016 14:54:23 GMT+0800 (CST)] layer "btn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.pngbtn_back@2x.png,150%btn_back@3x.png,144%btn_back_xxh.png": Duplicate path: btn_back@3x.png
+[Fri Sep 23 2016 15:10:41 GMT+0800 (CST)] layer "+50 [TEXT]": Expected Either a default asset specification or a layer asset specification but "+" found.

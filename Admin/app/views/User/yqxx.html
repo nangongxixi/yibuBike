@@ -1,0 +1,91 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<script src="/js/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="/js/css/colorbox.css" />
+<div id="m_title">
+    <div id="crumb">邀请信息</div>
+</div>
+
+<form method="get" name="search_form">
+    <div class="search">
+        <div class="title">快速检索</div>
+        <table style="width: auto;">
+            <tr> 
+                <th>手机号：</th>
+                <td><input type="text" class="text form_value" name="sh[question]" size="30" value="<{$sh.question|escape}>" /></td>
+                <th>姓名：</th>
+                <td><input type="text" class="text form_value" name="sh[question]" size="30" value="<{$sh.question|escape}>" /></td>
+                </tr><tr>
+                <th>被邀请人手机号：</th>
+                <td><input type="text" class="text form_value" name="sh[question]" size="30" value="<{$sh.question|escape}>" /></td>
+                <th>被邀请人姓名：</th>
+                <td><input type="text" class="text form_value" name="sh[question]" size="30" value="<{$sh.question|escape}>" /></td>  
+                <td class="option">
+                    <input type="image" src="/image/btn_search.png" />
+                    <img src="/image/btn_reset.png" onclick="searchReset()" />
+                </td>
+                
+            </tr>
+        </table>
+    </div>
+    <div class="list_bar">
+        <{include file="../Common/paging.html"}>
+        <div class="clr"></div>
+    </div>
+</form>
+
+<div class="list">
+    <table>
+        
+        <tr>
+            <th>ID</th>
+            <th width="140">手机号</th>
+            <th>姓名</th>
+            <th width="45" align="center">头像</th>
+            <th>邀请码</th>
+            <th>邀请码<br />修改次数</th>
+            <th>被邀请人手机号</th>
+            <th>被邀请人姓名</th>
+            <th>被邀人请头像</th>
+            <th>邀请人数</th>           
+        </tr>
+        <{foreach $results.items as $row}>
+        <tr>
+            <td><{$row.qid}></td>
+            <td>13888888888</td>
+            <td>欧阳瓜瓜</td> 
+            <td width="45" align="center">
+                <{if $row.remark}>
+                <img src="./image/<{$row.remark}>" width="40" height="30">
+                <{else}>
+                    <img src="/image/headpic.jpg" width="40" height="30">
+                <{/if}>
+            </td>
+            
+            <td>ASDSADA</td>
+            <td><{$row.qid}></td>
+            <td>13555555555</td>
+            <td>切尔诺贝</td>
+            <td width="45" align="center">
+                <{if $row.remark}>
+                <img src="./image/<{$row.remark}>" width="40" height="30">
+                <{else}>
+                    <img src="/image/headpic.jpg" width="40" height="30">
+                <{/if}>
+            </td>
+            <td><a href="ggg"><{$row.qid}></a></td> 
+            <div style='display:none'>
+                <div id="remark_<{$row.qid}>"><{$row.remark|nl2br}>
+                </div>
+            </div>
+        </tr>
+        <{/foreach}>
+    </table>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".inline").colorbox({inline: true, width: "450px"});
+    });
+</script>
+
+<{/block}>

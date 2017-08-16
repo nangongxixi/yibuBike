@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="renderer" content="webkit">
+        <?php echo $this->tag->getTitle(); ?>
+        <?php echo $this->tag->stylesheetLink("css/api.css"); ?>
+        <?php echo $this->tag->javascriptInclude("js/jquery-2.1.3.min.js"); ?>
+        <?php echo $this->tag->javascriptInclude("js/iscroll.js"); ?>
+        <?php echo $this->tag->javascriptInclude("js/api.js"); ?>
+    </head>
+    <body>
+        <div id="header">
+            <h1><?php echo PROJECT_NAME ?></h1>
+            <ul id="help_ul">
+                <li>
+                    <a href="javascript:;">help</a>
+                    <ul id="help_sub_ul">
+                        <li><a href="/file/analysis.txt" target="_blank">编码一览</a></li>
+                        <li><a href="/file/remark.txt" target="_blank">修改记录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="menu">
+                <div class="menu_bg_bar" id="menu_bg_bar_1"></div>
+                <div id="menu_scoll">
+                    <ul id="menu_ul">
+                        <?php
+                        $current = key($menus);
+                        $active = $menus[$current];
+                        foreach ($menus as $k => $menu):
+                            ?>
+                            <li<?php if (isset($menu['actions']) && count($menu['actions'])): ?> class="hasChildUl"<?php endif ?>>
+                                <a href="javascript:;"<?php if ($current == $k): ?> class="active"<?php endif ?> title="<?php echo $menu['desc'] ?>"><?php echo $menu['desc'] ?></a>
+                                <ul class="submenu">
+                                    <?php foreach ($menu['actions'] as $submenu): ?>
+                                        <li><a href="javascript:;" con="<?php echo $k ?>" act="<?php echo $submenu['action'] ?>"<?php if ($current == $k && $active['actions'][0]['action'] == $submenu['action']): ?> class="active"<?php endif ?> title="<?php echo $submenu['desc'] ?>"><?php echo $submenu['desc'] ?></a></li>
+                                    <?php endforeach ?>
+                                </ul>
+                            </li>
+                        <?php endforeach ?>
+                        <li class="not_border">&nbsp;</li>
+                    </ul>
+                </div>
+                <div class="menu_bg_bar" id="menu_bg_bar_2"></div>
+            </div>
+            <div id="main">
+                <div class="main_bg_bar" id="main_bg_bar_1"></div>
+                <div id="main_scoll"></div>
+                <div class="main_bg_bar" id="main_bg_bar_2"></div>
+            </div>
+        </div>
+        <div id="footer">&nbsp;</div>
+    </body>
+</html>

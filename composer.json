@@ -1,0 +1,13 @@
+{
+    "name": "danche-server/front",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@git.windward.cn:ww/php-framework.git"
+        }
+    ],
+    "require": {
+        "windward/framework": "dev-new"
+    }
+}
+

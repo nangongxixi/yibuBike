@@ -1,0 +1,84 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<script src="/js/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="/js/css/colorbox.css" />
+<div id="m_title">
+    <div id="crumb">预约信息</div>
+</div>
+
+<form method="get" name="search_form">
+    <div class="search">
+        <div class="title">快速检索</div>
+        <table style="width: auto;">
+            <tr> 
+                <th>单车编号：</th>
+                <td><input type="text" class="text form_value" name="sh[code]" size="30" value="<{$sh.code|escape}>" /></td>
+                <th>时间：</th>
+                <td>
+                    <input name="sh[begin]" id="begin" value="<{$sh.begin}>"> -
+                    <input name="sh[end]" id="end" value="<{$sh.end}>">
+                </td>
+                <td class="option">
+                    <input type="image" src="/image/btn_search.png" />
+                    <img src="/image/btn_reset.png" onclick="searchReset()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="list_bar">
+        <{include file="../Common/paging.html"}>
+        <div class="clr"></div>
+    </div>
+</form>
+
+<div class="list">
+    <table>
+        <col width="50" />
+        <col />
+        <col width="150" />
+        <col width="200" />
+        <col width="150" />
+        <col width="150" />
+        <tr>
+            <th>ID</th>
+            <th>单车编号</th>
+            <th>预约单车位置</th>
+            <th>单车参考位置</th>
+            <th width="9%">手机号</th>
+            <th width="6%">姓名</th>
+            <th>头像</th>
+            <th>单价</th>
+            <th>时间</th>
+            <th>已预约<br />(分钟)</th>
+        </tr>
+        <{foreach $results.items as $key=> $row}>
+        <tr>
+            <td><{$row.id}></td>
+            <td><{$row.code|escape}></td>
+            <td>四川成都</td>
+            <td>四川成都</td>
+            <td>13578888888</td>            
+            <td>张三</td>
+            <td>                
+                <{if $row.avatar}>
+                <a class="show_img" href="/image/<{$row.avatar}>"><img src="/image/<{$row.avatar}>" width="40" height="30"></a>
+                <{else}>
+                <a class="show_img" href="/image/headpic.jpg"><img src="/image/headpic.jpg" width="40" height="30"></a>
+                <{/if}>
+            </td> 
+            <td><{$row.unit_price}>元/<{$row.unit_min}>分钟</th>
+            <td><{$row.created}></th>
+            <td>54</th>
+        </tr>
+        <{/foreach}>
+    </table>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".inline").colorbox({inline: true, width: "450px"});
+        //$('#begin,#end').datetimepicker();//年月日时分秒
+        $('#begin,#end').datepicker();//年月日
+    });
+</script>
+
+<{/block}>

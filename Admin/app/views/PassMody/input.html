@@ -1,0 +1,47 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<div id="m_title">
+    <div id="crumb">密码修改</div>
+</div>
+
+<!--<form method="post" enctype="multipart/form-data" onsubmit="return formConfirm('save');">-->
+<form method="post" enctype="multipart/form-data">
+<div class="info">
+    <table>
+       
+        <tr>
+            <th class="must">当前密码：</th>
+            <td>
+                <input type="text" name="question[currpass]" size="30" value="<{$question.currpass|escape}>" />
+                <{ww_error_tip errors=$errors name=currpass tag="span"}>
+            </td>
+        </tr>
+        
+        <tr>
+            <th class="must">新密码：</th>
+            <td>
+                <input type="text" name="question[newpass]" size="30" value="<{$question.newpass|escape}>" />
+                <{ww_error_tip errors=$errors name=newpass tag="span"}>
+            </td>
+        </tr>
+        
+        <tr>
+            <th class="must">确认密码：</th>
+            <td>
+                <input type="text" name="question[surepass]" size="30" value="<{$question.surepass|escape}>" />
+                <{ww_error_tip errors=$errors name=surepass tag="span"}>
+            </td>
+        </tr>
+        
+        
+        <tr class="option">
+            <th></th>
+            <td>
+               <input type="image" src="/image/btn_save.png" value="保存" name="complete" />
+               
+            </td>
+        </tr>
+    </table>
+</div>
+</form>
+<{/block}>

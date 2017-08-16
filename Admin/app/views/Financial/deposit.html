@@ -1,0 +1,85 @@
+<{extends "../Layout/default.html"}>
+<{block name="main"}>
+<script src="/js/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="/js/css/colorbox.css" />
+<div id="m_title">
+    <div id="crumb">押金信息</div>
+</div>
+
+<form method="get" name="search_form">
+    <div class="search">
+        <div class="title">快速检索
+            <div class="title" style="float:right;white-space:nowrap">
+                <a href="#" class="rayu_html_iframe" style="color:red">退还记录</a>
+            </div>                
+        </div>
+        
+        <table style="width: auto;">
+            <tr> 
+                <th>手机号：</th>
+                <td><input type="text" class="text form_value" name="sh[code]" size="45" value="<{$sh.code|escape}>" /></td>
+                <th>姓名：</th>
+                <td><input type="text" class="text form_value" name="sh[code]" size="30" value="<{$sh.code|escape}>" /></td>                
+                </tr><tr>
+                <th>时间：</th>
+                <td>
+                    <input name="sh[begin]" id="begin" value="<{$sh.begin}>"> -
+                    <input name="sh[end]" id="end" value="<{$sh.end}>">
+                </td>                
+                <td class="option" colspan="3">
+                    <input type="image" src="/image/btn_search.png" />
+                    <img src="/image/btn_reset.png" onclick="searchReset()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="list_bar">
+        <{include file="../Common/paging.html"}>
+        <div class="clr"></div>
+    </div>
+</form>
+
+<div class="list">
+    <table>        
+        <tr>
+            <th>ID</th>           
+            <th>手机号</th>
+            <th>姓名</th>
+            <th width="9%">头像</th>
+            <th width="6%">支付类型</th>
+            <th>金额</th>
+            <th>支付时间</th>
+            <th>申请时间</th>
+            <th>操作</th>            
+        </tr>
+        <{foreach $results.items as $key=> $row}>
+        <tr>
+            <td><{$row.id}></td>            
+            <td>13467899999</td>
+            <td>王五</td>
+            <td>                
+                <{if $row.avatar}>
+                <a class="show_img" href="/image/<{$row.avatar}>"><img src="/image/<{$row.avatar}>" width="40" height="30"></a>
+                <{else}>
+                <a class="show_img" href="/image/headpic.jpg"><img src="/image/headpic.jpg" width="40" height="30"></a>
+                <{/if}>
+            </td> 
+            <td><{$codeConfig.paytype.type[2].name}></td>            
+            <td>13.51</td> 
+            <td><{$row.created}></th>
+            <td><{$row.created}></th>
+            <td><a href="" class="rayu_html_iframe">确认退还</a></th>
+            
+        </tr>
+        <{/foreach}>
+    </table>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".inline").colorbox({inline: true, width: "450px"});
+        //$('#begin,#end').datetimepicker();//年月日时分秒
+        $('#begin,#end').datepicker();//年月日
+    });
+</script>
+
+<{/block}>
